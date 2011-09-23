@@ -252,7 +252,7 @@ static C2D_COLORFORMAT get_format(int format) {
 	   return C2D_COLOR_888; //work-around, C2D supports BGR not RGB in this case
     case COPYBIT_FORMAT_BGRA_8888:	   return C2D_COLOR_8888;//work-around, C2D supports ARGB not BGRA in this case
     case COPYBIT_FORMAT_YCbCr_422_SP:  
-    case COPYBIT_FORMAT_YCbCr_420_SP:
+    //case COPYBIT_FORMAT_YCbCr_420_SP:
  
     default:                           return C2D_COLOR_0565;//work-around, C2D does not support YCbCr   
     }
@@ -269,7 +269,7 @@ static int get_pixelbit(int format) {
     case COPYBIT_FORMAT_RGBA_5551:
     case COPYBIT_FORMAT_RGBA_4444:     return 16;
     case COPYBIT_FORMAT_YCbCr_422_SP:
-    case COPYBIT_FORMAT_YCbCr_420_SP:
+    //case COPYBIT_FORMAT_YCbCr_420_SP:
     default:                           return 8;
     }
 }
@@ -357,7 +357,7 @@ static int stretch_copybit(
                 case COPYBIT_FORMAT_RGB_888:
                 case COPYBIT_FORMAT_BGRA_8888:
                 case COPYBIT_FORMAT_YCbCr_422_SP:
-                case COPYBIT_FORMAT_YCbCr_420_SP:
+                //case COPYBIT_FORMAT_YCbCr_420_SP:
                     return -EINVAL;
             }
         }
