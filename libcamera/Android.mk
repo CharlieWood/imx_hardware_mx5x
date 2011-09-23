@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifneq ($(USE_CAMERA_STUB),true)
+
 ifeq ($(BOARD_SOC_CLASS),IMX5X)
 LOCAL_PATH:= $(call my-dir)
 
@@ -68,3 +70,5 @@ LOCAL_MODULE_TAGS := eng
 
 include $(BUILD_SHARED_LIBRARY)
 endif
+
+endif # ($(USE_CAMERA_STUB),true)
